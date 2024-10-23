@@ -1,0 +1,93 @@
+/* projectstyle.css */
+body {
+    background-color: #1d8f96; /* Sky Blue */
+    font-family: Arial, sans-serif;
+    background-image: url('assets/bgtree.jpg'); /* Ganti dengan path yang sesuai */
+    background-size: cover; /* Agar gambar memenuhi layar */
+    background-position: center;
+    background-attachment: fixed; /* Supaya background tetap saat di-scroll */
+    position: relative; /* Membuat posisi relatif untuk elemen lain */
+    z-index: -1; /* Mengatur agar background berada di belakang */
+}
+
+.navbar {
+    background-color: #3f0102; /* Deep Red */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.navbar a {
+    color: #fff;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2a5298 !important;
+}
+
+.container {
+    padding: 40px 20px;
+}
+
+/* Section Styling */
+.project-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.project-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-card h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.project-card p {
+    color: #777;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.text-center {
+    color: floralwhite;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

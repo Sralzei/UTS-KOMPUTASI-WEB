@@ -1,0 +1,103 @@
+
+.navbar {
+    background-color: #3f0102; /* Deep Red */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.navbar a {
+    color: #fff;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2a5298 !important;
+}
+
+/* General Styles */
+body {
+    background-image: url('assets/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.content {
+    padding: 40px 20px;
+}
+
+/* Section Styling */
+.section {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px 0;
+    backdrop-filter: blur(5px);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.section.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Introduction Section */
+.introduction {
+    animation: slideInLeft 1s ease forwards;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Hobbies Section */
+.hobbies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hobby-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: calc(var(--order) * 0.2s);
+    opacity: 0;
+}
+
+.hobby-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
