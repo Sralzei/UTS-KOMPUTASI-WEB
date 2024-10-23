@@ -1,3 +1,113 @@
 create database uts;
 USE uts;
 
+    CREATE TABLE portfolio (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
+    link VARCHAR(255) NOT NULL
+    );
+
+
+    CREATE TABLE about (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    program_study VARCHAR(100) NOT NULL,
+    introduction TEXT NOT NULL
+);
+
+
+    CREATE TABLE hobbies (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    about_id INT,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    FOREIGN KEY (about_id) REFERENCES about(id) ON DELETE CASCADE
+);
+
+
+    CREATE TABLE projects (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    image_path VARCHAR(255) NOT NULL
+);
+
+    
+CREATE TABLE certificates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
+    category ENUM('informatika', 'kesehatan') NOT NULL
+);
+
+
+CREATE TABLE kontak (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(50),
+    text VARCHAR(255),
+    link VARCHAR(255)
+);
+
+
+SELECT * FROM uts.portfolio;
+
+INSERT INTO portfolio (title, description, image_path, link) VALUES
+('Home', 'Selamat datang di halaman beranda portofolioku! Di sini, kamu akan menemukan perjalanan inspiratifku, berbagai proyek kreatif yang telah kubangun, serta banyak informasi menarik lainnya yang akan memperkenalkan siapa diriku secara lebih mendalam.', 'assets/myhome.jpg', 'home.php'),
+('About Me', 'Temukan lebih dalam tentang diriku! Sebagai seorang pengembang dan pecinta karya animanga, aku akan berbagi kisah dan pengalaman yang membentuk diriku hari ini. Yuk, kenali lebih jauh!', 'assets/bell.jpg', 'about.php'),
+('Projects', 'Di sini, aku akan mempersembahkan berbagai proyek menarik yang telah aku kerjakan. Buka jika kamu tertarik!', 'assets/project2.jpg', 'projects.php'),
+('Certificates', 'Selami koleksi sertifikat yang telah aku raih! Setiap sertifikat adalah bukti dedikasi dan komitmenku untuk terus belajar dan berkembang serta beradaptasi.', 'assets/project.jpg', 'certificate.php'),
+('Contact', 'Ingin berbicara lebih lanjut? Jangan ragu untuk menghubungiku! Aku selalu terbuka untuk diskusi, kolaborasi, atau sekadar berbagi ide. Mari terhubung dan berbagi inspirasi.', 'assets/contact.jpg', 'contact.php');
+
+SELECT * FROM uts.kontak;
+
+INSERT INTO kontak (type, text, link) VALUES
+('phone', '+62 889 2184 665', 'https://wa.me/628892184665'),
+('email', 'Email', 'mailto:syauqi.atfal@gmail.com'),
+('instagram', 'Instagram', 'https://www.instagram.com/sralzei'),
+('facebook', 'Facebook', 'https://www.facebook.com/sauki.atfal'),
+('telegram', 'Telegram', 'https://t.me/sralzei');
+
+
+SELECT * FROM uts.certificates;
+
+-- Sertifikat di bidang Informatika
+INSERT INTO certificates (title, image_path, category) VALUES
+('Sertifikat Talkshow', 'assets/enterpreneur_talkshow.jpg', 'informatika'),
+('Sertifikat Perpustakaan', 'assets/perpustakaan.jpg', 'informatika'),
+('Sertifikat Forkanite', 'assets/forkanite.jpg', 'informatika');
+
+-- Sertifikat di bidang Kesehatan
+INSERT INTO certificates (title, image_path, category) VALUES
+('Sertifikat Magang', 'assets/RS_rsudtangsel.jpg', 'kesehatan'),
+('Sertifikat Magang', 'assets/klinik_babyprince.jpg', 'kesehatan'),
+('Sertifikat Magang', 'assets/puskesmas_ciptim.jpg', 'kesehatan'),
+('Sertifikat STR', 'assets/STR.jpg', 'kesehatan');
+
+
+SELECT * FROM uts.projects;
+
+INSERT INTO projects (title, description, image_path) VALUES
+('Project 1', 'Deskripsi singkat untuk project 1.', 'images/project1.jpg'),
+('Project 2', 'Deskripsi singkat untuk project 2.', 'images/project2.jpg'),
+('Project 3', 'Deskripsi singkat untuk project 3.', 'images/project3.jpg');
+
+UPDATE projects SET image_path = 'videos/project1.mp4' WHERE title = 'Project 1';
+
+
+SELECT * FROM uts.about;
+
+INSERT INTO about (name, program_study, introduction) VALUES 
+('Syauqi Athfal Akhyar', 'Informatika - Universitas Pembangunan Jaya', 'Halo! Aku adalah mahasiswa Informatika di Universitas Pembangunan Jaya. Aku sangat antusias dalam mengeksplorasi Dunia Teknologi, Pengembangan Game dan juga Dunia Animanga.
+');
+
+INSERT INTO hobbies (about_id, name, description) VALUES 
+(1, 'Membuat dan Mengembangkan Game', 'Saya suka menciptakan dan bermain game sebagai cara untuk mengekspresikan kreativitas dan keinginan diriku sendiri.'),
+(1, 'Mengeksplor Dunia Game', 'Aku sangat menyukai Menjelajahi berbagai jenis game untuk mendapatkan inspirasi dan mencoba berbagai hal dari segala kreatifitas semua orang yang dibentuk dalam sebuah game.'),
+(1, 'Menonton Anime dan Membaca Manga', 'Anime dan manga adalah bagian penting dari hiburan saya, terkadang ada anime yang membuat kita menambah wawasan serta banyak kesan pesan yang disampaikan didalam animenya yang dapat kita ambil.');
+
+
+
+
+
