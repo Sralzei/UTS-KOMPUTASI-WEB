@@ -74,7 +74,9 @@ SELECT * FROM uts.certificates;
 
 -- Sertifikat di bidang Informatika
 INSERT INTO certificates (title, image_path, category) VALUES
+('Sertifikat Corsera', 'assets/coursera_algorithm.jpg', 'informatika')
 ('Sertifikat Talkshow', 'assets/enterpreneur_talkshow.jpg', 'informatika'),
+('Sertifikat Talkshow', 'assets/jlp_talkshow.jpg', 'informatika'),
 ('Sertifikat Perpustakaan', 'assets/perpustakaan.jpg', 'informatika'),
 ('Sertifikat Forkanite', 'assets/forkanite.jpg', 'informatika');
 
@@ -84,14 +86,17 @@ INSERT INTO certificates (title, image_path, category) VALUES
 ('Sertifikat Magang', 'assets/klinik_babyprince.jpg', 'kesehatan'),
 ('Sertifikat Magang', 'assets/puskesmas_ciptim.jpg', 'kesehatan'),
 ('Sertifikat STR', 'assets/STR.jpg', 'kesehatan');
+('Sertifikat Asisten Keperawatan', 'assets/askep.jpg', 'kesehatan');
+('Sertifikat Wardah', 'assets/wardah.jpg', 'kesehatan');
 
 
 SELECT * FROM uts.projects;
 
 INSERT INTO projects (title, description, image_path) VALUES
-('Project 1', 'Deskripsi singkat untuk project 1.', 'images/project1.jpg'),
-('Project 2', 'Deskripsi singkat untuk project 2.', 'images/project2.jpg'),
-('Project 3', 'Deskripsi singkat untuk project 3.', 'images/project3.jpg');
+('Mengembangkan sebuah Aplikasi', 'Aku dan rekanku membuat suatu aplikasi yang bernama Fam's Daily. Aplikasi ini dirancang dengan maksud tujuan untuk membantu para keluarga yang memiliki jadwal yang padat dan tidak dapat mengorganisir jadwal mereka dengan baik. Dengan adanya aplikasi yang kami buat, mereka bisa mengorganisir keseharian mereka menjadi lebih baik.', 'assets/fams.png'),
+('Membuat sebuah produk untuk Kewirausahaan', 'Aku dan kedua rekanku membuat sebuah usaha dimana kami membuat produk-produk yang didasarkan dari bahan kelapa. Kami berhasil mempresentasikan produk kami saat seminar berlangsung.', 'assets/garco.jpg.jpg'),
+('Membuat dan Mengembangkan Game', 'Aku memiliki projek untuk membuat dan mengembangkan Game di salah satu platform terkenal, yaitu Roblox. Game yang kubuat ini merupakan tipe game RnG dimana pengguna mendapatkan sesuatu harus dengan memakai Random number Generator alias Keberuntungan.', 'assets/game.mp4');
+
 
 UPDATE projects SET image_path = 'videos/project1.mp4' WHERE title = 'Project 1';
 
@@ -106,7 +111,6 @@ INSERT INTO hobbies (about_id, name, description) VALUES
 (1, 'Membuat dan Mengembangkan Game', 'Saya suka menciptakan dan bermain game sebagai cara untuk mengekspresikan kreativitas dan keinginan diriku sendiri.'),
 (1, 'Mengeksplor Dunia Game', 'Aku sangat menyukai Menjelajahi berbagai jenis game untuk mendapatkan inspirasi dan mencoba berbagai hal dari segala kreatifitas semua orang yang dibentuk dalam sebuah game.'),
 (1, 'Menonton Anime dan Membaca Manga', 'Anime dan manga adalah bagian penting dari hiburan saya, terkadang ada anime yang membuat kita menambah wawasan serta banyak kesan pesan yang disampaikan didalam animenya yang dapat kita ambil.');
-
 
 
 
